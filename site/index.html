@@ -107,9 +107,12 @@ will determine the OPIDChecks features available to the user.  </p>
 <p>The OPIDChecks administrator will be in the role of Superadmin and will have access to features necessary for the maintenance of application OPIDChecks.
 There will be only one Superadmin account, but the credentials for this account will be available to maintainers of the application.</p>
 <h2 id="mkdocs">MkDocs</h2>
-<p>This document was created using MkDocs as was the <a href="http://www.mkdocs.org/">MkDocs website</a> itself. MkDocs was installed following the guide
-on <a href="https://www.sitepoint.com/building-product-documentation-mkdocs/">this page</a>. This guide is useful for setting up the environment; however,
-the syntax for the file mkdocs.yml has changed from that described in the guide. The new syntax can be found at in the User Guide section of
+<p>This document was created using MkDocs as was the <a href="http://www.mkdocs.org/">MkDocs website</a> itself. MkDocs was installed
+following the guide
+on <a href="https://www.sitepoint.com/building-product-documentation-mkdocs/">this page</a>. This guide is useful for setting up
+the environment; however,
+the syntax for the file mkdocs.yml has changed from that described in the guide. The new syntax can be found at in the
+User Guide section of
 <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">this document</a>.</p>
 <p>An MkDocs document is a static website and can hosted by any service that supports static sites. This MkDocs document
 is hosted by
@@ -130,12 +133,15 @@ mkdoc.yml file of the project and execute</p>
 </code></pre>
 <p>to expand the Markdown version of the document into an HTML version in the /site folder. Then open the Git GUI on the
 folder containing the mkdocs.yml file and use the GUI to create a new Git repository on the local disk.</p>
-<p>Next create repository opidchecksdoc to hold the documentation at GitHub.</p>
+<p>Next at GitHub create repository opiddchecksdoc to hold the documentation. Then create a repository on the desktop
+machine to associate with the GitHub repository. Issue the following command in the folder containing the mkdocs.yml file:</p>
+<pre><code>git init
+</code></pre>
 <p>After this, in the folder containing the mkdocs.yml file, define a remote called origin for the document:</p>
 <pre><code>git remote add origin https://github.com/tmhsplb/opidchecksdoc
 </code></pre>
-<p>This command references the GitHub repository opidchecksdoc. The remote only needs to be defined once. It will be remembered by the
-Git BASH shell.</p>
+<p>This command references the GitHub repository opidchecksdoc. The remote only needs to be defined once. It will be
+remembered by the Git BASH shell.</p>
 <p>In the shell issue the following commands:</p>
 <pre><code>git add -A
 
@@ -243,5 +249,5 @@ several minutes before edits are available.</p></div>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-01-10 17:55:33
+Build Date UTC : 2020-01-10 20:39:54
 -->

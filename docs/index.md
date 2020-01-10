@@ -18,9 +18,12 @@ The OPIDChecks administrator will be in the role of Superadmin and will have acc
 There will be only one Superadmin account, but the credentials for this account will be available to maintainers of the application.
 
 ## MkDocs
-This document was created using MkDocs as was the [MkDocs website](http://www.mkdocs.org/) itself. MkDocs was installed following the guide
-on [this page](https://www.sitepoint.com/building-product-documentation-mkdocs/). This guide is useful for setting up the environment; however,
-the syntax for the file mkdocs.yml has changed from that described in the guide. The new syntax can be found at in the User Guide section of
+This document was created using MkDocs as was the [MkDocs website](http://www.mkdocs.org/) itself. MkDocs was installed
+following the guide
+on [this page](https://www.sitepoint.com/building-product-documentation-mkdocs/). This guide is useful for setting up
+the environment; however,
+the syntax for the file mkdocs.yml has changed from that described in the guide. The new syntax can be found at in the
+User Guide section of
 [this document](https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation).
 
 An MkDocs document is a static website and can hosted by any service that supports static sites. This MkDocs document
@@ -48,14 +51,17 @@ When it is time to publish a version of a document, in a Git BASH shell opened o
 to expand the Markdown version of the document into an HTML version in the /site folder. Then open the Git GUI on the
 folder containing the mkdocs.yml file and use the GUI to create a new Git repository on the local disk.
 
-Next create repository opidchecksdoc to hold the documentation at GitHub.
+Next at GitHub create repository opiddchecksdoc to hold the documentation. Then create a repository on the desktop
+machine to associate with the GitHub repository. Issue the following command in the folder containing the mkdocs.yml file:
+
+    git init
 
 After this, in the folder containing the mkdocs.yml file, define a remote called origin for the document:
 
     git remote add origin https://github.com/tmhsplb/opidchecksdoc
 
-This command references the GitHub repository opidchecksdoc. The remote only needs to be defined once. It will be remembered by the
-Git BASH shell.
+This command references the GitHub repository opidchecksdoc. The remote only needs to be defined once. It will be
+remembered by the Git BASH shell.
 
 In the shell issue the following commands:
 

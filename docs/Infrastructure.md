@@ -1,93 +1,92 @@
 
 
+## Hosting Environments
+There are 2 hosting environments for application OPIDChecks: desktop and production. They differ in the database
+connection string used by each.
+The connection string is configured as the value of variable SQLSERVER_CONNECTION_STRING in the `<appSettings>` section
+of Web.config. The static value configured there is used by the desktop environment. The static value is overwritten by
+injection (at AppHarbor)
+when OPIDChecks is deployed to create the production release. The transformation file Web.Release.config
+plays a role in this deployments. The production deployment at AppHarbor
+has its Environment variable set to Release by default. This causes Web.Release.config to be used upon deployment.
 
+## Git for Windows
+Visual Studio 2019 (Community Edition) comes with built-in support for GitHub. A new project can be added to Git source control on the desktop by simply
+selecting `Add to Source Control` from the context menu of the Solution file in the Solution Explorer. Once a project is under Git source control it can
+be added to a remote GitHub repository by using tools available through Visual Studio. However, a technique preferred by many developers is to use [Git
+for Windows](https://git-for-windows.github.io/). Git for Windows provides a BASH shell interface to GitHub which uses the same set of commands
+available at GitHub itself. Git for Windows integrates with Windows Explorer to allow a BASH shell to be opened on a project that has been added to a
+desktop Git repository. Simply point Windows Explorer at the folder containing the project solution file and select `Git BASH Here` from the context
+menu of the folder to open a Git for Windows BASH shell. Then execute Git commands from this shell window. Git for Windows also offers Git GUI, a
+graphical version of most Git command line functions. To open Git GUI simply select `Git GUI Here` from Windows Explorer.
 
+## GitHub
+Application OPIDChecks is stored at GitHub as a repository under an account with the email address peter3418@ymail.com and account name tmhsplb.
 
+Only user tmhsplb can deploy directly to this repository. Any other user needing to deploy a version of OPIDChecks to
+this repository
+must be declared a collaborator on repository OPIDChecks by user tmhsplb. A collaborator is a user associated with a
+different account established at GitHub.  
 
+Git for Windows was used to create a remote to save to this GitHub account. The remote was created in the Git BASH shell by opening the shell on the
+folder which contains the OPIDDaily.sln file (folder `C:/VS2019Projects/OPIDChecks`) and issuing the command
 
+    git remote add origin https://github.com/tmhsplb/opidchecks.git
 
+Creating this remote only needs to be done once, because Git for Windows stores the remote.
 
+To remove a remote use the command
 
+     git remote rm myremote
 
+The need for this may arise if there was a typo in the creation of myremote.
 
+## AppHarbor
+AppHarbor (appharbor.com) is a Platform as a Service Provider which uses Amazon Web Services infrastructure for hosting applications and Git as a
+versioning tool. When an application is defined at AppHarbor, a Git repository is created to manage versions of the application's deployment.
+The OPIDChecks application is defined as an application at AppHarbor to create the production repository of the desktop
+application. The remote configured for OPIDChecks at AppHarbor is:
 
+    https://tmhsplb@appharbor.com/opidchecks.git
 
+This remote is configured from a Windows Git BASH shell by the command
 
+    git remote add opidchecks https://tmhsplb@appharbor.com/opidchecks.git  
 
+After the remote is configured in the Git BASH shell, issuing the command
 
+    git push opidchecks master
 
+will deploy the master branch of solution opidchecks to AppHarbor as application OPIDChecks, accessible through the URL
 
+    https://opidchecks.apphb.com
 
+If you reset your password at AppHarbor, the 'git push' command will no longer work from the Git BASH shell. You need
+to have Git prompt you for your new password. To do this on a Windows 10 machine, go to
 
+    Control Panel > User Accounts > Credential Manager > Windows Credentials
 
-## MkDocs
-This document was created using MkDocs as was the [MkDocs website](http://www.mkdocs.org/) itself. MkDocs was installed following the guide
-on [this page](https://www.sitepoint.com/building-product-documentation-mkdocs/). This guide is useful for setting up the environment; however,
-the syntax for the file mkdocs.yml has changed from that described in the guide. The new syntax can be found at in the User Guide section of
-[this document](https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation).
+and remove the AppHarbor entry under Generic Credentials. The next time you push, you will be prompted for your
+repository password.
 
-An MkDocs document is a static website and can hosted by any service that supports static sites. This MkDocs document
-is hosted by
-[GitHub Pages](https://pages.github.com/). The [Brackets](http://brackets.io/) open source text editor was used to
-develop the document on the desktop.
-An MkDocs document uses HTML Markdown for a desktop development version of a document. GitHub provides a
-[cheatsheet for Markdown syntax](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
+Application OPIDChecks is deployed using the free Canoe subscription level at AppHarbor. Under a Canoe subscription,
+the IIS application pool of
+application OPIDChecks has a 20 minute timeout, which forces OPIIDChecks to spin up its resources again after 20
+minutes of idle time.
 
-MkDocs provides a built-in preview server. To start this server, open a BASH Shell on the folder containing the
-mkdoc.yml file of the project and execute
+The free Yocto version of SQL Server is used as an add-on to the OPIDChecks deployment. The Yocto version has a limit
+of 20MB of storage space.  However, the database usage must be monitored to avoid exceeding the 20MB limit.
+See the Database Utilization section on the Database tab for how to do this. A paid subscription to a SQL Server at
+AppHarbor would alleviate this problem.
 
-    mkdocs serve
+## Deployment
+This section summarizes deployment to AppHarbor. Much of the information here can be found in the section on AppHarbor.
 
-Then go to
+After configuring the **master remote** the Visual Studio production branch can be deployed to AppHarbor by using the Git BASH Shell command
 
-    http://127.0.0.1:8000
+    git push opidchecks master
 
-in a desktop browser. Pages can be edited and saved while in preview mode. The changes will be reflected in the browser document.
+AppHarbor will automatically deploy application OPIDChecks if the push results in a successful build. After AppHarbor
+finishes building and deploying the code, application OPIDChecks can be viewed at
 
-When it is time to publish a version of a document, in a Git BASH shell opened on the folder containing the mkdocs.yml file, issue the command
-
-    mkdocs build
-
-to expand the Markdown version of the document into an HTML version in the /site folder. Then open the Git GUI on the
-folder containing the mkdocs.yml file and use the GUI to create a new Git repository on the local disk.
-
-Next create repository opiddailydoc to hold the documentation at GitHub.
-
-After this, in the folder containing the mkdocs.yml file, define a remote called origin for the document:
-
-    git remote add origin https://github.com/tmhsplb/opidchecksdoc.git
-
-This command references the GitHub repository opidchecksdoc. The remote only needs to be defined once. It will be remembered by the
-Git BASH shell.
-
-In the shell issue the following commands:
-
-    git add -A
-
-    git commit -a -m 'Initial commit'
-
-    git push origin master
-
-This will push the master branch of the document to the repository identified by the remote called origin. Then click on the Settings tab for the newly
-created repository and scroll down to the GitHub Pages section. Select the master branch source and click on the Save button.
-
-Finally, to view the published document go to:
-
-    https://tmhsplb.github.io/opiddailydoc/site
-
-Unless a new file is added to file `mkdocs.yml`, subsequent edits only require the commands
-
-    mkdocs build
-
-    git commit -a -m '<Comment for new commit>'
-
-    git push origin master
-
-to update repository opiddailydoc at GitHub.
-
-If a new file is added to `mkdocs.yml` then
-
-    git add -A
-
-must be run before the `mkdocs build` command is run. This causes any new files to be added to the local git repository. In either case it may take
-several minutes before edits are available.
+    https://opidchecks.apphb.com
