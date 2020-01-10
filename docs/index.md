@@ -76,7 +76,7 @@ created repository and scroll down to the GitHub Pages section. Select the maste
 
 Finally, to view the published document go to:
 
-    https://tmhsplb.github.io/opiddailydoc/site
+    https://tmhsplb.github.io/opidchecksdoc/site
 
 Unless a new file is added to file `mkdocs.yml`, subsequent edits only require the commands
 
@@ -86,7 +86,7 @@ Unless a new file is added to file `mkdocs.yml`, subsequent edits only require t
 
     git push origin master
 
-to update repository opiddailydoc at GitHub.
+to update repository opidchecksdoc at GitHub.
 
 If a new file is added to `mkdocs.yml` then
 

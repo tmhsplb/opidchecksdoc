@@ -10,6 +10,69 @@ when OPIDChecks is deployed to create the production release. The transformation
 plays a role in this deployments. The production deployment at AppHarbor
 has its Environment variable set to Release by default. This causes Web.Release.config to be used upon deployment.
 
+## Visual Studio Project
+The Visual Studio 2019 (Community Edition) project representing application OPIDChecks was developed using an ASP.NET
+Identity 2.0 sample project
+developed by Syed Shanu as a starting point. The project is described in the
+[excellent CodeProject article ASP.NET MVC Security and Creating User Role](https://www.codeproject.com/Articles/1075134/ASP-NET-MVC-Security-And-Creating-User-Role).
+
+The sample project uses the Visual Studio MVC5 project template and makes use of Katana OWIN middleware for user
+authentication. The use of Katana is
+built into the ASP.NET Identity 2.0 provider used by the project template, as is explained in the CodeProject article.
+
+On the Properties page of the Visual Studio project, remember to select Local IIS as the server and click the Create Virtual Directory button to set
+
+     http://localhost/OpidChecks
+
+as the Project Url. These two actions create an application called OpidChecks under the Default Web Site in IIS and
+enable project OpidChecks to be run
+in a desktop version of IIS under this Url. Without this, the desktop IIS cannot be used to host the application. See
+the section on configuring IIS below.
+
+When the codebase is installed on a developer's Visual Studio instance on his/her machine by cloning the GitHub repository **OPIDDaily**, the developer
+must use Visual Studio to create a **staging** branch and then rebase this branch to **origin/master**. This will cause the remote changes to appear in
+the local **staging** branch without the need to Fetch and Pull them as is done between a remote **master** branch and a local **master** branch.
+
+## SQL Server Express and SSMS
+The desktop version of OPIDDaily makes use of a SQL Server Express to store information about clients. The database is managed by v18.0 of SQL
+Server Management Studio (SSMS). Visual Studio includes the ability to view an installed SQL Server Express database, but it is more convenient to have
+SQL Server Management Studio available for this purpose.  SQL Server Express and SSMS require separate (lengthy) downloads.
+
+The SQL Server Express database for OPIDDaily was created by executing the SQL query
+
+    create database OPIDDailyDB  
+
+executed inside of SSMS. With this database selected in SSMS, there are two SQL queries that need to be executed to enable IIS
+to talk to SQL Server Express. The first query is
+
+       CREATE USER [NT AUTHORITY\NETWORK SERVICE]
+       FOR LOGIN [NT AUTHORITY\NETWORK SERVICE]
+       WITH DEFAULT_SCHEMA = dbo;
+
+This query creates the database user NT AUTHORITY\NETWORK SERVICE. The second query is
+
+      EXEC sp_addrolemember 'db_owner', 'NT AUTHORITY\NETWORK SERVICE'
+
+This query grants user NT AUTHORITY\NETWORK SERVICE the necessary permissions to communicate with IIS. These same two queries do not need to be executed
+in the AppHarbor database to prepare it to communicate with IIS. See below for information about the AppHarbor deployment of OPIDDaily.
+
+It is also necessary to change the application pool identity of application OPIDDaily running under IIS to NETWORKSERVICE. See the section on
+configuring IIS.
+
+There is a bug in SSMS v18.0 that causes it to stop after launch; the splash screen will display and then SSMS will quit.
+[The fix for this](https://dba.stackexchange.com/questions/238609/ssms-refuses-to-start) is to edit file ssms.exe.config found in folder
+
+          C:\\Program Files (x86)\Microsoft SQL Server Management Studio 18\Common7\IDE
+
+and remove (or comment out) the line which has the text:
+
+          <NgenBind_OptimizeNonGac enabled="1" />
+
+This should be around line 38. Then restart SSMS.
+
+SSMS v18.0 does not have the capability to generate database diagrams. Previous versions of SSMS had this capability,
+but it was removed from v18.0. The capability has been added back to newer version of SSMS.
+
 ## Git for Windows
 Visual Studio 2019 (Community Edition) comes with built-in support for GitHub. A new project can be added to Git source control on the desktop by simply
 selecting `Add to Source Control` from the context menu of the Solution file in the Solution Explorer. Once a project is under Git source control it can

@@ -1,17 +1,27 @@
 # Implementation
-Application OPIDDaily is implemented as an ASP.NET Framework application using the ASP.NET MVC 5 project template provided by Visual Studio 2019
-(Community Edition). It uses ASP.NET Identity 2.0 to define a  set of user roles. Each user role is associated with a separate MVC controller.
-Controller inheritance is used to share editing functionality across user roles.
+Application OPIDChecks is implemented as an ASP.NET Framework application using the ASP.NET MVC 5 project template provided by Visual Studio 2019
+(Community Edition). It uses ASP.NET Identity 2.0 to define a set of user roles. Each user role is associated with a separate MVC controller.
 
-It may be useful to upgrade application OPIDDaily to use the more modern ASP.NET Core technology. It may also be useful to proivde an alternative to the
-free hosting service AppHarbor, which is currentl used by OPIDDaily. See the AppHarbor section of the Infratructure tab for details on this.
+It may be useful to upgrade application OPIDChecks to use the more modern ASP.NET Core technology. It may also be useful to provide an alternative to the
+free hosting service AppHarbor, which is currently used by OPIDChecks. See the AppHarbor section of the Infrastructure
+tab for details on this.
 
-The graphical user interface of OPIDDaily is built using Bootstrap 3.0.0. Each user role is associated with its own layout file which defines a
-Bootstrap navbar containing links to the OPIDDaily features available to users in the role. The ASP.NET Identity system ensures that a user in a
-specified role cannot visit any pages outside of those allowed to users in that role. (See the section on Role Controllers.)
+The graphical user interface of OPIDChecks is built using Bootstrap 3.0.0. Each user role is associated with its own
+layout file which defines a
+Bootstrap navbar containing links to the OPIDChecks features available to users in the role. The ASP.NET Identity
+system ensures that a user in a
+specified role cannot visit any pages outside of those allowed to users in that role. (See the section on Role
+  Controllers.)
 
-Because of its use of SignalR, application OPIDDaily will always require a server side component. See the section on SignalR on this tab for a
-discussion of this.
+Because of its use of SignalR, application OPIDChecks will always require a server side component. See the section on
+SignalR on this tab for a discussion of this.
+
+## Users
+OPIDChecks is a role-based system. Each registered user will be assigned a user role by the OPIDChecks administrator. The role that a user is assigned
+will determine the OPIDChecks features available to the user.  
+
+The OPIDChecks administrator will be in the role of Superadmin and will have access to features necessary for the maintenance of application OPIDChecks.
+There will be only one Superadmin account, but the credentials for this account will be available to maintainers of the application.
 
 ## The Superadmin User
 OPIDDaily defines a pre-registered Superadmin user who has privileges to
