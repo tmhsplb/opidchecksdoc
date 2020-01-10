@@ -1,0 +1,8 @@
+site_name: OPIDChecks
+site_description: Documentation for OPIDChecks
+theme: mkdocs
+nav:
+ - Background: 'index.md'
+ - Infrastructure: 'Infrastructure.md'
+ - Database: 'Database.md'
+ - Implementation: 'Implementation.md'

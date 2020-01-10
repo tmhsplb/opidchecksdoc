@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Documentation for OPIDChecks">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>OPIDChecks</title>
+        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=".">OPIDChecks</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <a href=".">Background</a>
+                            </li>
+                            <li >
+                                <a href="Infrastructure/">Infrastructure</a>
+                            </li>
+                            <li >
+                                <a href="Database/">Database</a>
+                            </li>
+                            <li >
+                                <a href="Implementation/">Implementation</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="disabled">
+                                <a rel="next" >
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="Infrastructure/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#background">Background</a></li>
+            <li><a href="#users">Users</a></li>
+            <li><a href="#mkdocs">MkDocs</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="background">Background</h1>
+<p>Operation ID is a ministry that exists to serve the need of individuals who need to obtain identification documents to support their application for
+a variety of services from housing to job application. The ministry is volunteer driven and has been in place for over thirty years. During this time
+thousands of individuals have received help to support their identification needs. Help is provided in the form of vouchers that can be used to pay
+for services rendered by either the Texas Department of Public Safety for a Texas ID or by the Bureau of Vital Statistics of Texas or another state
+to acquire a certified copy of a birth certificate.</p>
+<p>Operation ID makes every attempt to be a good steward of the limited resources available to it. To this end Operation
+ID seeks to enforce a twice-in-a-lifetime policy with respect to the vouchers it issues. A client of Operation ID
+is limited to 2 IDs or 2 birth certificates in a lifetime. The 2 IDs restriction applies to Texas state IDs or Texas
+Drivers licenses or one of each.</p>
+<h2 id="users">Users</h2>
+<p>OPIDChecks is a role-based system. Each registered user will be assigned a user role by the OPIDChecks administrator. The role that a user is assigned
+will determine the OPIDChecks features available to the user.  </p>
+<p>The OPIDChecks administrator will be in the role of Superadmin and will have access to features necessary for the maintenance of application OPIDChecks.
+There will be only one Superadmin account, but the credentials for this account will be available to maintainers of the application.</p>
+<h2 id="mkdocs">MkDocs</h2>
+<p>This document was created using MkDocs as was the <a href="http://www.mkdocs.org/">MkDocs website</a> itself. MkDocs was installed following the guide
+on <a href="https://www.sitepoint.com/building-product-documentation-mkdocs/">this page</a>. This guide is useful for setting up the environment; however,
+the syntax for the file mkdocs.yml has changed from that described in the guide. The new syntax can be found at in the User Guide section of
+<a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">this document</a>.</p>
+<p>An MkDocs document is a static website and can hosted by any service that supports static sites. This MkDocs document
+is hosted by
+<a href="https://pages.github.com/">GitHub Pages</a>. The <a href="http://atom.io/">Atom</a> open source text editor was used to
+develop the document on the desktop.
+An MkDocs document uses HTML Markdown for a desktop development version of a document. GitHub provides a
+<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">cheatsheet for Markdown syntax</a>.</p>
+<p>MkDocs provides a built-in preview server. To start this server, open a BASH Shell on the folder containing the
+mkdoc.yml file of the project and execute</p>
+<pre><code>mkdocs serve
+</code></pre>
+<p>Then go to</p>
+<pre><code>http://127.0.0.1:8000
+</code></pre>
+<p>in a desktop browser. Pages can be edited and saved while in preview mode. The changes will be reflected in the browser document.</p>
+<p>When it is time to publish a version of a document, in a Git BASH shell opened on the folder containing the mkdocs.yml file, issue the command</p>
+<pre><code>mkdocs build
+</code></pre>
+<p>to expand the Markdown version of the document into an HTML version in the /site folder. Then open the Git GUI on the
+folder containing the mkdocs.yml file and use the GUI to create a new Git repository on the local disk.</p>
+<p>Next create repository opidchecksdoc to hold the documentation at GitHub.</p>
+<p>After this, in the folder containing the mkdocs.yml file, define a remote called origin for the document:</p>
+<pre><code>git remote add origin https://github.com/tmhsplb/opidchecksdoc
+</code></pre>
+<p>This command references the GitHub repository opidchecksdoc. The remote only needs to be defined once. It will be remembered by the
+Git BASH shell.</p>
+<p>In the shell issue the following commands:</p>
+<pre><code>git add -A
+
+git commit -a -m 'Initial commit'
+
+git push origin master
+</code></pre>
+<p>This will push the master branch of the document to the repository identified by the remote called origin. Then click on the Settings tab for the newly
+created repository and scroll down to the GitHub Pages section. Select the master branch source and click on the Save button.</p>
+<p>Finally, to view the published document go to:</p>
+<pre><code>https://tmhsplb.github.io/opiddailydoc/site
+</code></pre>
+<p>Unless a new file is added to file <code>mkdocs.yml</code>, subsequent edits only require the commands</p>
+<pre><code>mkdocs build
+
+git commit -a -m '&lt;Comment for new commit&gt;'
+
+git push origin master
+</code></pre>
+<p>to update repository opiddailydoc at GitHub.</p>
+<p>If a new file is added to <code>mkdocs.yml</code> then</p>
+<pre><code>git add -A
+</code></pre>
+<p>must be run before the <code>mkdocs build</code> command is run. This causes any new files to be added to the local git repository. In either case it may take
+several minutes before edits are available.</p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.0.4
+Build Date UTC : 2020-01-10 17:55:33
+-->
