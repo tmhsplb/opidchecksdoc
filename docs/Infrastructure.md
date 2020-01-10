@@ -153,3 +153,5 @@ AppHarbor will automatically deploy application OPIDChecks if the push results i
 finishes building and deploying the code, application OPIDChecks can be viewed at
 
     https://opidchecks.apphb.com
+
+This URL can be bookmarked on the browser bookmarks bar for ease of access.

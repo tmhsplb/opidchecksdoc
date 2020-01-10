@@ -85,7 +85,6 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#background">Background</a></li>
-            <li><a href="#users">Users</a></li>
             <li><a href="#mkdocs">MkDocs</a></li>
     </ul>
 </div></div>
@@ -101,11 +100,6 @@ to acquire a certified copy of a birth certificate.</p>
 ID seeks to enforce a twice-in-a-lifetime policy with respect to the vouchers it issues. A client of Operation ID
 is limited to 2 IDs or 2 birth certificates in a lifetime. The 2 IDs restriction applies to Texas state IDs or Texas
 Drivers licenses or one of each.</p>
-<h2 id="users">Users</h2>
-<p>OPIDChecks is a role-based system. Each registered user will be assigned a user role by the OPIDChecks administrator. The role that a user is assigned
-will determine the OPIDChecks features available to the user.  </p>
-<p>The OPIDChecks administrator will be in the role of Superadmin and will have access to features necessary for the maintenance of application OPIDChecks.
-There will be only one Superadmin account, but the credentials for this account will be available to maintainers of the application.</p>
 <h2 id="mkdocs">MkDocs</h2>
 <p>This document was created using MkDocs as was the <a href="http://www.mkdocs.org/">MkDocs website</a> itself. MkDocs was installed
 following the guide
@@ -114,7 +108,7 @@ the environment; however,
 the syntax for the file mkdocs.yml has changed from that described in the guide. The new syntax can be found at in the
 User Guide section of
 <a href="https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation">this document</a>.</p>
-<p>An MkDocs document is a static website and can hosted by any service that supports static sites. This MkDocs document
+<p>An MkDocs document is a static website and can be hosted by any service that supports static sites. This MkDocs document
 is hosted by
 <a href="https://pages.github.com/">GitHub Pages</a>. The <a href="http://atom.io/">Atom</a> open source text editor was used to
 develop the document on the desktop.
@@ -127,14 +121,17 @@ mkdoc.yml file of the project and execute</p>
 <p>Then go to</p>
 <pre><code>http://127.0.0.1:8000
 </code></pre>
-<p>in a desktop browser. Pages can be edited and saved while in preview mode. The changes will be reflected in the browser document.</p>
-<p>When it is time to publish a version of a document, in a Git BASH shell opened on the folder containing the mkdocs.yml file, issue the command</p>
+<p>in a desktop browser. Pages can be edited and saved while in preview mode. The changes will be reflected in the browser
+document.</p>
+<p>When it is time to publish a version of a document, in a Git BASH shell opened on the folder containing the mkdocs.yml
+file, issue the command</p>
 <pre><code>mkdocs build
 </code></pre>
 <p>to expand the Markdown version of the document into an HTML version in the /site folder. Then open the Git GUI on the
 folder containing the mkdocs.yml file and use the GUI to create a new Git repository on the local disk.</p>
 <p>Next at GitHub create repository opiddchecksdoc to hold the documentation. Then create a repository on the desktop
-machine to associate with the GitHub repository. Issue the following command in the folder containing the mkdocs.yml file:</p>
+machine to associate with the GitHub repository. Issue the following command in the folder containing the mkdocs.yml
+file:</p>
 <pre><code>git init
 </code></pre>
 <p>After this, in the folder containing the mkdocs.yml file, define a remote called origin for the document:</p>
@@ -149,8 +146,9 @@ git commit -a -m 'Initial commit'
 
 git push origin master
 </code></pre>
-<p>This will push the master branch of the document to the repository identified by the remote called origin. Then click on the Settings tab for the newly
-created repository and scroll down to the GitHub Pages section. Select the master branch source and click on the Save button.</p>
+<p>This will push the master branch of the document to the repository identified by the remote called origin. Then click
+on the Settings tab for the newly created repository and scroll down to the GitHub Pages section. Select the master
+branch source and click on the Save button.</p>
 <p>Finally, to view the published document go to:</p>
 <pre><code>https://tmhsplb.github.io/opidchecksdoc/site
 </code></pre>
@@ -249,5 +247,5 @@ several minutes before edits are available.</p></div>
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-01-10 21:08:20
+Build Date UTC : 2020-01-10 21:34:00
 -->

@@ -10,13 +10,6 @@ ID seeks to enforce a twice-in-a-lifetime policy with respect to the vouchers it
 is limited to 2 IDs or 2 birth certificates in a lifetime. The 2 IDs restriction applies to Texas state IDs or Texas
 Drivers licenses or one of each.
 
-## Users
-OPIDChecks is a role-based system. Each registered user will be assigned a user role by the OPIDChecks administrator. The role that a user is assigned
-will determine the OPIDChecks features available to the user.  
-
-The OPIDChecks administrator will be in the role of Superadmin and will have access to features necessary for the maintenance of application OPIDChecks.
-There will be only one Superadmin account, but the credentials for this account will be available to maintainers of the application.
-
 ## MkDocs
 This document was created using MkDocs as was the [MkDocs website](http://www.mkdocs.org/) itself. MkDocs was installed
 following the guide
@@ -26,7 +19,7 @@ the syntax for the file mkdocs.yml has changed from that described in the guide.
 User Guide section of
 [this document](https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation).
 
-An MkDocs document is a static website and can hosted by any service that supports static sites. This MkDocs document
+An MkDocs document is a static website and can be hosted by any service that supports static sites. This MkDocs document
 is hosted by
 [GitHub Pages](https://pages.github.com/). The [Atom](http://atom.io/) open source text editor was used to
 develop the document on the desktop.
@@ -42,9 +35,11 @@ Then go to
 
     http://127.0.0.1:8000
 
-in a desktop browser. Pages can be edited and saved while in preview mode. The changes will be reflected in the browser document.
+in a desktop browser. Pages can be edited and saved while in preview mode. The changes will be reflected in the browser
+document.
 
-When it is time to publish a version of a document, in a Git BASH shell opened on the folder containing the mkdocs.yml file, issue the command
+When it is time to publish a version of a document, in a Git BASH shell opened on the folder containing the mkdocs.yml
+file, issue the command
 
     mkdocs build
 
@@ -52,7 +47,8 @@ to expand the Markdown version of the document into an HTML version in the /site
 folder containing the mkdocs.yml file and use the GUI to create a new Git repository on the local disk.
 
 Next at GitHub create repository opiddchecksdoc to hold the documentation. Then create a repository on the desktop
-machine to associate with the GitHub repository. Issue the following command in the folder containing the mkdocs.yml file:
+machine to associate with the GitHub repository. Issue the following command in the folder containing the mkdocs.yml
+file:
 
     git init
 
@@ -71,8 +67,9 @@ In the shell issue the following commands:
 
     git push origin master
 
-This will push the master branch of the document to the repository identified by the remote called origin. Then click on the Settings tab for the newly
-created repository and scroll down to the GitHub Pages section. Select the master branch source and click on the Save button.
+This will push the master branch of the document to the repository identified by the remote called origin. Then click
+on the Settings tab for the newly created repository and scroll down to the GitHub Pages section. Select the master
+branch source and click on the Save button.
 
 Finally, to view the published document go to:
 
